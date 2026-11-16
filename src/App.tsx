@@ -1,6 +1,6 @@
 import "./App.css";
 import "./japanese-theme.css";
-import portrait from "./images/me.jpg";
+import portrait from "./images/me-monitor.jpg";
 import talentados from "./images/talentados.jpg";
 import taftics from "./images/taftics.png";
 import languageTool from "./images/languagetool.png";
