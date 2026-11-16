@@ -13,7 +13,7 @@ const projects = [
     title: "Talentados — client software project",
     image: talentados,
     imageAlt: "Talentados applicant tracking system title screen",
-    text: "Led quality assurance for an academic project developed for Asceoft. Wrote test cases, documented defects, verified fixes, created automated test scripts, and coordinated QA responsibilities.",
+    text: "Led quality assurance for an applicant tracking system application developed for Asceoft. Wrote test cases, documented defects, verified fixes, created automated test scripts, and coordinated QA responsibilities.",
     tags: ["Test cases", "Automation", "Team leadership"],
   },
   {
@@ -27,9 +27,9 @@ const projects = [
   },
   {
     no: "03",
-    type: "LANGUAGE TECHNOLOGY",
+    type: "NATURAL LANGUAGE PROCESSING",
     title: "Filipino spell checker rules",
-    text: "Developed three rules for LanguageTool to detect spelling errors in the Filipino language.",
+    text: "Successfully developed and integrated three rules to be used in LanguageTool to detect and suggest corrections for spelling/grammatical errors in the Filipino language, while also preventing false positive detections.",
     tags: ["LanguageTool", "Filipino", "Spelling detection"],
     image: languageTool,
     imageAlt: "LanguageTool identifying Filipino spelling errors",
