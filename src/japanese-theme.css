@@ -1,0 +1,145 @@
+/* Optional Japanese-inspired accents, kept separate for easy removal. */
+.hero-art {
+  background-color: #e1eefb;
+  background-image:
+    radial-gradient(circle at 100% 150%, transparent 48%, rgba(111, 151, 193, .14) 49%, rgba(111, 151, 193, .14) 51%, transparent 52%),
+    radial-gradient(circle at 0 150%, transparent 48%, rgba(111, 151, 193, .14) 49%, rgba(111, 151, 193, .14) 51%, transparent 52%);
+  background-size: 44px 22px;
+}
+.japanese-greeting {
+  display: inline-block;
+  margin: -28px 0 17px;
+  padding: 5px 10px;
+  border-left: 3px solid #b86779;
+  background: #f8e9ed;
+  color: #82465a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.japanese-greeting span { color: #c77f93; }
+.ticker { border-bottom-color: #c99ca9; }
+.project-number span, .asterisk { color: #ba7186; }
+.art-caption span:last-child { color: #ae647b; }
+@media(max-width:750px){.japanese-greeting{margin-top:-18px}}
+
+/* Sakura accents */
+.desktop {
+  background-image: radial-gradient(#31578b 0.8px, transparent 0.8px),
+    radial-gradient(ellipse at 18% 12%, rgba(239, 179, 198, .17), transparent 34%);
+}
+.hero-art { overflow: hidden; }
+.hero-art::before, .hero-art::after {
+  content: '✿';
+  position: absolute;
+  color: #dc9eb3;
+  opacity: .7;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.hero-art::before { top: 66px; right: 8%; font-size: 68px; transform: rotate(16deg); }
+.hero-art::after { bottom: 65px; left: 8%; font-size: 42px; transform: rotate(-18deg); }
+.hero-art > * { position: relative; z-index: 1; }
+.hero-art .art-label, .hero-art .art-caption { position: absolute; }
+.japanese-greeting { background: #f9e7ed; border-left-color: #c46c88; }
+.ticker { background: #f1d7e1; border-color: #c697aa; color: #563f60; }
+.ticker span::first-letter { color: #b35575; }
+.work { background: linear-gradient(180deg, #fff8fb 0%, #f4f7fc 220px); }
+.section-index::before { content: '✿  '; color: #b65e7b; }
+.project-image-frame { background: #e8cdd8; }
+.tags span { border-color: #dcb9c7; background: #fff8fa; color: #70475a; }
+.about-section { background: #f7ecf1; border-top-color: #d8b2c2; }
+.info-box { background: #fffafc; }
+.box-title { background: linear-gradient(90deg, #153f7e, #a66587); }
+.sticker { border-color: #c3839b; color: #8b4c67; background: #fff7fa; }
+.contact { background: linear-gradient(115deg, #123c79 0%, #273c74 65%, #704767 100%); }
+.contact h2 em { color: #f4c6d6; }
+.contact-links a:first-child { background: #f6d5e1; color: #54344f; }
+.contact-links a:first-child:hover { background: #fff; color: #123c79; }
+footer { background: #fff8fb; }
+
+/* Japanese-inspired details across the page */
+.jp-section-label {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 7px;
+  border: 1px solid #d9a8ba;
+  background: #fff4f8;
+  color: #82485f;
+  font-family: sans-serif;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.nav { border-bottom: 3px double #d5a8ba; }
+.nav .brand span { color: #bc6683; }
+.nav div a:hover { color: #9d4265; }
+.work .section-heading, .about-section .section-heading {
+  border-bottom: 1px solid #dfc5d0;
+  padding-bottom: 24px;
+}
+.work .section-heading::after {
+  content: '✿  ·  ✿';
+  color: #ca8da4;
+  font-size: 20px;
+  letter-spacing: .25em;
+  white-space: nowrap;
+}
+.project { border-bottom-color: #dfcad4; }
+.project-number { color: #a55e79; }
+.project-image-frame { box-shadow: 5px 5px 0 #ecd6df; }
+.about-section {
+  background-image: repeating-linear-gradient(90deg, transparent 0 47px, rgba(187, 126, 151, .06) 48px 49px);
+}
+.info-box { box-shadow: 4px 4px 0 #e8cad6; }
+.info-box .box-title::before { content: '✿'; color: #f8c9d8; margin-right: 8px; }
+.info-box .box-title > span { margin-left: auto; }
+.contact { position: relative; overflow: hidden; }
+.contact::after {
+  content: '✿';
+  position: absolute;
+  right: 4%;
+  bottom: -55px;
+  color: rgba(248, 198, 217, .11);
+  font: 230px/1 Georgia, serif;
+  pointer-events: none;
+}
+.contact > * { position: relative; z-index: 1; }
+.contact .jp-section-label { background: transparent; color: #ffe4ef; border-color: #dba7bd; }
+footer span[lang="ja"] { color: #a65575; }
+@media(max-width:750px) {
+  .work .section-heading::after { display: block; margin-top: 18px; }
+  .contact::after { font-size: 150px; bottom: -35px; }
+}
+
+/* Balance the background content across both columns. */
+@media (min-width: 751px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 6%;
+    align-items: start;
+  }
+  .about-grid .info-stack { display: contents; }
+  .about-story { grid-column: 1; grid-row: 1; }
+  .about-grid .info-box:nth-child(1) { grid-column: 2; grid-row: 1; }
+  .about-grid .info-box:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .about-grid .info-box:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .about-grid .info-box:nth-child(2),
+  .about-grid .info-box:nth-child(3) { height: 100%; }
+}
+
+
+
+
+/* A tiled, low-resolution desktop wallpaper inspired by the Windows 98 era. */
+.desktop {
+  background-color: #345584;
+  background-image:
+    radial-gradient(circle, #e6a8ca 0 2px, transparent 2.5px),
+    radial-gradient(circle, #9cb9dc 0 1px, transparent 1.5px),
+    linear-gradient(45deg, rgba(19, 48, 99, .3) 25%, transparent 25%, transparent 75%, rgba(19, 48, 99, .3) 75%),
+    linear-gradient(45deg, rgba(19, 48, 99, .3) 25%, transparent 25%, transparent 75%, rgba(19, 48, 99, .3) 75%);
+  background-size: 48px 48px, 24px 24px, 16px 16px, 16px 16px;
+  background-position: 0 0, 12px 12px, 0 0, 8px 8px;
+}
+.topline, .bottomline { color: #fff1fa; text-shadow: 1px 1px #263b68; }

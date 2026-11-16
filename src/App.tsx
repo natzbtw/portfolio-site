@@ -1,31 +1,45 @@
 import "./App.css";
+import "./japanese-theme.css";
+import portrait from "./images/me.jpg";
+import talentados from "./images/talentados.jpg";
+import taftics from "./images/taftics.png";
+import languageTool from "./images/languagetool.png";
+import pvz from "./images/pvz.png";
 
 const projects = [
   {
     no: "01",
     type: "SOFTWARE ENGINEERING / QA",
-    title: "Client software project",
+    title: "Talentados — client software project",
+    image: talentados,
+    imageAlt: "Talentados applicant tracking system title screen",
     text: "Led quality assurance for an academic project developed for Asceoft. Wrote test cases, documented defects, verified fixes, created automated test scripts, and coordinated QA responsibilities.",
     tags: ["Test cases", "Automation", "Team leadership"],
   },
   {
     no: "02",
     type: "FULL-STACK WEB",
-    title: "Establishment review app",
+    title: "Taftics — establishment review app",
+    image: taftics,
+    imageAlt: "Taftics establishment review application homepage",
     text: "Co-developed a review application with React and MongoDB, implementing login session logic and core features while verifying role-based access control.",
     tags: ["React", "MongoDB", "RBAC"],
   },
   {
     no: "03",
-    type: "ARTIFICIAL INTELLIGENCE",
-    title: "Sokoban solver bot",
-    text: "Co-developed a Java puzzle solver with map handling and state generation. Compared A* and Greedy Best-First Search using custom heuristics.",
-    tags: ["Java", "Search algorithms", "Heuristics"],
+    type: "LANGUAGE TECHNOLOGY",
+    title: "Filipino spell checker rules",
+    text: "Developed three rules for LanguageTool to detect spelling errors in the Filipino language.",
+    tags: ["LanguageTool", "Filipino", "Spelling detection"],
+    image: languageTool,
+    imageAlt: "LanguageTool identifying Filipino spelling errors",
   },
   {
     no: "04",
     type: "GAME DEVELOPMENT",
     title: "Plants vs. Zombies recreation",
+    image: pvz,
+    imageAlt: "Plants vs. Zombies game scene",
     text: "Built a Java recreation in a two-person team, developing model and controller logic, Swing interface features, and playtesting the game.",
     tags: ["Java Swing", "MVC", "Debugging"],
   },
@@ -74,6 +88,9 @@ function App() {
                 PAGE.
               </div>
               <p className="intro">COMPUTER SCIENCE STUDENT &amp; BUILDER</p>
+              <p className="japanese-greeting" lang="ja">
+                こんにちは！ <span aria-hidden="true">✿</span>
+              </p>
               <h1>
                 Hi, I’m
                 <br />
@@ -97,10 +114,7 @@ function App() {
                 </a>
               </div>
             </div>
-            <div
-              className="hero-art"
-              aria-label="Decorative retro computer illustration"
-            >
+            <div className="hero-art">
               <div className="art-label">
                 A LITTLE BIT ABOUT ME <span>✳</span>
               </div>
@@ -108,19 +122,13 @@ function App() {
                 <div className="screen">
                   <div className="screen-top">
                     <span>● ● ●</span>
-                    <span>MY_DESKTOP</span>
+                    <span>富士山</span>
                   </div>
-                  <div className="screen-content">
-                    <div className="pixel-star">✳</div>
-                    <span>
-                      BUILD.
-                      <br />
-                      TEST.
-                      <br />
-                      LEARN.
-                    </span>
-                    <small>:) KEEP CREATING</small>
-                  </div>
+                  <img
+                    className="screen-photo"
+                    src={portrait}
+                    alt="Leelancze with Mount Fuji in the background"
+                  />
                 </div>
                 <div className="monitor-bottom">
                   <span>lancze™</span>
@@ -130,7 +138,7 @@ function App() {
               <div className="stand"></div>
               <div className="base"></div>
               <div className="art-caption">
-                <span>FIG. 01 — ALWAYS CURIOUS</span>
+                <span>FIG. 01 — ME WITH MT. FUJI</span>
                 <span>✦ ✦ ✦</span>
               </div>
             </div>
@@ -144,14 +152,19 @@ function App() {
           <section className="section work" id="work">
             <div className="section-heading">
               <div>
-                <p className="section-index">01 / THE PROJECT DIRECTORY</p>
+                <p className="section-index">
+                  01 / THE PROJECT DIRECTORY{" "}
+                  <span className="jp-section-label" lang="ja">
+                    作品
+                  </span>
+                </p>
                 <h2>
                   Things I’ve <em>worked on.</em>
                 </h2>
               </div>
               <p>
-                A selection of academic projects, from testing client software
-                to teaching a computer to solve puzzles.
+                A selection of academic projects spanning software quality, web
+                development, language technology, and games.
               </p>
             </div>
             <div className="project-list">
@@ -170,14 +183,8 @@ function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="project-icon" aria-hidden="true">
-                    {p.no === "01"
-                      ? "✓"
-                      : p.no === "02"
-                        ? "✳"
-                        : p.no === "03"
-                          ? "⌘"
-                          : "☺"}
+                  <div className="project-image-frame">
+                    <img src={p.image} alt={p.imageAlt} loading="lazy" />
                   </div>
                 </article>
               ))}
@@ -189,7 +196,12 @@ function App() {
           <section className="section about-section" id="experience">
             <div className="section-heading">
               <div>
-                <p className="section-index">02 / A LITTLE BACKGROUND</p>
+                <p className="section-index">
+                  02 / A LITTLE BACKGROUND{" "}
+                  <span className="jp-section-label" lang="ja">
+                    自己紹介
+                  </span>
+                </p>
                 <h2>
                   Always a <em>work in progress.</em>
                 </h2>
@@ -213,12 +225,6 @@ function App() {
                   and industrial automation, and how they can help optimize
                   autonomous systems.
                 </p>
-                <div className="sticker">
-                  MADE WITH
-                  <br />
-                  <strong>CURIOSITY</strong>
-                  <br />✦ &amp; COFFEE ✦
-                </div>
               </div>
               <div className="info-stack">
                 <div className="info-box">
@@ -243,16 +249,28 @@ function App() {
                 </div>
                 <div className="info-box">
                   <div className="box-title">
+                    RESEARCH <span>− □ ×</span>
+                  </div>
+                  <div className="box-content">
+                    <h3>Student Researcher</h3>
+                    <p>
+                      Center for Computational Imaging and Visual Innovations
+                      (CIVI)
+                    </p>
+                  </div>
+                </div>
+                <div className="info-box">
+                  <div className="box-title">
                     THE TOOLBOX <span>− □ ×</span>
                   </div>
                   <div className="box-content">
                     <p className="mini">LANGUAGES &amp; TOOLS</p>
                     <p>
-                      Java · Python · C · JavaScript · React · Git/GitHub · Java
-                      Swing · MongoDB
+                      Java · Python · C · JavaScript · Rust · React · Git/GitHub
+                      · Java Swing · MongoDB · SQL/MySQL · PostgreSQL · Supabase
                     </p>
                     <p className="mini">ALSO EXPLORED</p>
-                    <p>R · Rust · Kotlin · HTML/CSS</p>
+                    <p>R · Kotlin · HTML/CSS</p>
                   </div>
                 </div>
               </div>
@@ -260,7 +278,12 @@ function App() {
           </section>
           <section className="contact" id="contact">
             <div>
-              <p className="section-index">03 / YOU’VE GOT MAIL</p>
+              <p className="section-index">
+                03 / YOU’VE GOT MAIL{" "}
+                <span className="jp-section-label" lang="ja">
+                  連絡
+                </span>
+              </p>
               <h2>
                 Let’s make
                 <br />
@@ -279,6 +302,13 @@ function App() {
                 >
                   LINKEDIN ↗
                 </a>
+                <a
+                  href="https://github.com/natzbtw"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GITHUB ↗
+                </a>
               </div>
             </div>
             <div className="envelope" aria-hidden="true">
@@ -289,7 +319,9 @@ function App() {
         </main>
         <footer>
           <span>© 2026 LEELANCZE PACOMIO</span>
-          <span>THANKS FOR STOPPING BY! ✳</span>
+          <span>
+            THANKS FOR STOPPING BY! <span lang="ja">ありがとう</span> ✿
+          </span>
           <a href="#top">BACK TO TOP ↑</a>
         </footer>
       </div>
